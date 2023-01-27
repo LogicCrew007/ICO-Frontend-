@@ -1,5 +1,8 @@
+.page
+
 .App {
-  text-align: center;
+  text-align: left;
+  
 }
 
 .App-logo {
@@ -10,11 +13,12 @@
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
+    
   }
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: black;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -35,4 +39,62 @@
   to {
     transform: rotate(360deg);
   }
+}
+.btnclass{
+  background-color: gray;
+  border: 1px solid;
+  border-radius: 5px;
+  margin-top: 15px;
+  font-size: 20px;
+  width: 400px;
+  justify-content: center;
+
+}
+.personalClass{
+  background-color:#222f2c;
+  background-image: url("../src/images/Capture2.png");
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+.btnclasswraper{
+  position: absolute;
+    top: 20%;
+}
+
+.vertical-center{
+  margin: 50px;
+  position: absolute;
+  top: 35%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 400px;
+  
+}
+
+
+
+.fontstyle{
+  font-family: italic;
+}
+.submitClass{
+  margin-top: 15%;
+  font-size: 20px;
+  width: 400px;
+  justify-content: center;
+  background-color: gray;
+  border: 1px solid;
+  border-radius: 5px;
+}
+
+.display-flex{
+  display: flex;
+  justify-content: center;
+}
+.MintAmount{
+  display: flex;
+  margin:10px ;
+
 }
