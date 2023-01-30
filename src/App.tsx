@@ -4,7 +4,7 @@ import './App.css';
 import Web3 from "web3";
 import ICOJson from "../src/ICO.json"
 import { AbiItem } from "web3-utils";
-const address = "0x37a68A459a1f19d1f229Ef71B1d57F75B72cA591";
+const address = "0xDcF5373f9ce442a57509C66de4A501D0753fbFb5";
 function App() {
   const web3 = new Web3(window.ethereum);
   const [accountMetaMask, setAccountMetaMask] = useState<any>([])
@@ -38,7 +38,7 @@ function App() {
 
       const contract = new web3.eth.Contract(ICOJson.abi as AbiItem[], address);
       const buyTokenDeveloper = await contract.methods.Developer(accounts[0]).send({ from: accountMetaMask[0] });
-      console.log("buyTokenDeveloper", buyTokenDeveloper)
+      console.log("buyTokenDeveloper", buyTokenDeveloper.events.Transfer.returnValues.value)
     } catch (error) {
       console.log(error)
 
@@ -50,21 +50,12 @@ function App() {
     console.log(checkAmount)
     return checkAmount;
   }
-  async function User(amount: any, a: any) {
+  async function User(amount: any) {
     connectWallet()
     try {
-      // const accounts = await web3.eth.getAccounts()
-
-      //   Contract.methods.User().at("0xa2dE86F91C83257814e301F382ac0C8D8b0Fe1c1").setValue(amount, function() {
-      //  {
-      //     console.log(amount);
-
-
-      //   }
-
       console.log("amount", amount)
       const contract = new web3.eth.Contract(ICOJson.abi as AbiItem[], address);
-      // const a = await contract.methods.User().send().setValue(amount);
+
       const buyToken = await contract.methods.User().send({ from: accountMetaMask[0], value: amount });
       console.log("buyToken", buyToken)
     }
@@ -76,7 +67,7 @@ function App() {
   }
   async function Customers(amount: any) {
 
-    await User(amount, "");
+    await User(amount);
 
 
   }
